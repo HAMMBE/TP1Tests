@@ -2,6 +2,10 @@ namespace TP1;
 
 public class EX3
 {
+    public static void ImpotShow(int revenu)
+    {
+        Console.WriteLine(Imposition(revenu));
+    }
     public static string Imposition(int revenu)
     {
         if (revenu < 0)
