@@ -4,8 +4,8 @@ public class EX2
 {
     public static string TennisScore(int player1Points, int player2Points)
     {
-        string score = "";
-        string[] pointNames = new string[] { "Zero", "Fifteen", "Thirty", "Forty" };
+        string score = string.Empty;
+        string[] pointNames = { "Zero", "Fifteen", "Thirty", "Forty" };
 
         if (player1Points == player2Points)
         {
