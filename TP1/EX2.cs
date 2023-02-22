@@ -2,60 +2,47 @@ namespace TP1;
 
 public class EX2
 {
-    public const string FirstPlayer = "First Player";
-    public const string SecondPlayer = "Second Player";
-    public int FirstPlayerExchangesWon { get; set; }
-    public int FirstPlayerScore { get; set; }
-    public int SecondPlayerExchangesWon { get; set; }
-    public int SecondPlayerScore { get; set; }
-    public string? Winner { get; set; }
+    public static string TennisScore(int player1Points, int player2Points)
+    {
+        string score = "";
+        string[] pointNames = new string[] { "Zero", "Fifteen", "Thirty", "Forty" };
 
-    public EX2(int firstPlayerExchangesWon, int secondPlayerExchangesWon)
-    {
-        FirstPlayerExchangesWon = firstPlayerExchangesWon;
-        SecondPlayerExchangesWon = secondPlayerExchangesWon;
-    }
-    public void ComputeScore()
-    {
-        CheckIfExchangesAreInRange();
-        FirstPlayerScore = GetScore(FirstPlayerExchangesWon);
-        SecondPlayerScore = GetScore(SecondPlayerExchangesWon);
-       
-        if (FirstPlayerExchangesWon > 3 && SecondPlayerExchangesWon < 3)
+        if (player1Points == player2Points)
         {
-            Winner = FirstPlayer;
+            if (player1Points >= 3)
+            {
+                score = "Deuce";
+            }
+            else
+            {
+                score = pointNames[player1Points] + " All";
+            }
         }
-        else if (SecondPlayerExchangesWon > 3 && FirstPlayerExchangesWon < 3)
+        else if (player1Points >= 4 || player2Points >= 4)
         {
-            Winner = SecondPlayer;
+            int pointDiff = player1Points - player2Points;
+            if (pointDiff == 1)
+            {
+                score = "Advantage Player 1";
+            }
+            else if (pointDiff == -1)
+            {
+                score = "Advantage Player 2";
+            }
+            else if (pointDiff >= 2)
+            {
+                score = "Game Player 1";
+            }
+            else
+            {
+                score = "Game Player 2";
+            }
         }
         else
         {
-            if (FirstPlayerExchangesWon - SecondPlayerExchangesWon == 2)
-            {
-                Winner = FirstPlayer;
-            }
-            else if (SecondPlayerExchangesWon - FirstPlayerExchangesWon == 2)
-            {
-                Winner = SecondPlayer;
-            }
+            score = pointNames[player1Points] + " - " + pointNames[player2Points];
         }
-    }
 
-    private void CheckIfExchangesAreInRange()
-    {
-        if (FirstPlayerExchangesWon < 0 || SecondPlayerExchangesWon < 0)
-        {
-            throw new ArgumentException("Exchanges must be positive");
-        }
+        return score;
     }
-
-    private int GetScore(int exchanges) =>
-        exchanges switch
-        {
-            0 => 0,
-            1 => 15,
-            2 => 30,
-            >= 3 => 40
-        };
 }
