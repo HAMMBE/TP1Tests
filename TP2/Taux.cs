@@ -15,6 +15,10 @@ public class Taux
         {
             tauxAnnuel += 0.15;
         }
+        if (isCardiaque)
+        {
+            tauxAnnuel += 0.30;
+        }
         return Math.Round(tauxAnnuel, 2);
     }
 
