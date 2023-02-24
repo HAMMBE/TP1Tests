@@ -10,9 +10,11 @@ public class UnitTestMensualite
        Assert.Equal(508.49, Mensualite.Calculer(50000,9,2.10));
     }
 
-    [Fact]
-    public void ShouldReturnCorrectTaux()
+    [Theory]
+    [InlineData(0.30, false)]
+    [InlineData(0.25, true)]
+    public void ShouldReturnCorrectTaux(double expected, bool isSportif)
     {
-        Assert.Equal(0.30, Taux.CalculerTaux());
+        Assert.Equal(expected, Taux.CalculerTaux());
     }
 }
