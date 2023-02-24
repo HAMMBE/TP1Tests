@@ -19,6 +19,10 @@ public class Taux
         {
             tauxAnnuel += 0.30;
         }
+        if (isIngeInfo)
+        {
+            tauxAnnuel -= 0.05;
+        }
         
         return Math.Round(tauxAnnuel, 2);
     }
