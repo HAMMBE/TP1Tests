@@ -9,4 +9,10 @@ public class UnitTestMensualite
     {
        Assert.Equal(508.49, Mensualite.Calculer(50000,9,2.10));
     }
+
+    [Fact]
+    public void ShouldReturnCorrectTauxMensuel()
+    {
+        Assert.Equal(0.30, Taux.CalculerTaux());
+    }
 }
