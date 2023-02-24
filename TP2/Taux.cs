@@ -5,15 +5,18 @@ public class Taux
     public const double TauxAnnuelBase = 0.30;
     public static double CalculerTaux(bool isSportif, bool isFumeur)
     {
+        double tauxAnnuel = TauxAnnuelBase;
+        
         if (isSportif)
         {
-            return TauxAnnuelBase - 0.05;
+            tauxAnnuel -= 0.05;
         }
         if (isFumeur)
         {
-            return Math.Round(TauxAnnuelBase + 0.15, 2);
+            
+            tauxAnnuel += 0.15;
         }
-        return TauxAnnuelBase;
+        return Math.Round(tauxAnnuel, 2);
     }
 
 }
