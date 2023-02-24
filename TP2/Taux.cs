@@ -3,7 +3,7 @@ namespace TP2;
 public class Taux
 {
     public const double TauxAnnuelBase = 0.30;
-    public static double CalculerTaux(bool isSportif, bool isFumeur, bool isCardiaque)
+    public static double CalculerTaux(bool isSportif, bool isFumeur, bool isCardiaque, bool isIngeInfo)
     {
         double tauxAnnuel = TauxAnnuelBase;
         
@@ -19,6 +19,7 @@ public class Taux
         {
             tauxAnnuel += 0.30;
         }
+        
         return Math.Round(tauxAnnuel, 2);
     }
 

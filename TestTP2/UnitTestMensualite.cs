@@ -11,13 +11,14 @@ public class UnitTestMensualite
     }
 
     [Theory]
-    [InlineData(0.30, false, false, false)]
-    [InlineData(0.25, true, false, false)]
-    [InlineData(0.45, false, true, false)]
-    [InlineData(0.60, false, false, true)]
-    [InlineData(0.70, true, true, true)]
-    public void ShouldReturnCorrectTaux(double expected, bool isSportif, bool isFumeur, bool isCardiaque)
+    [InlineData(0.30, false, false, false, false)]
+    [InlineData(0.25, true, false, false, false)]
+    [InlineData(0.45, false, true, false, false)]
+    [InlineData(0.60, false, false, true, false)]
+    [InlineData(0.25, false, false, false, true)]
+    [InlineData(0.65, true, true, true, true)]
+    public void ShouldReturnCorrectTaux(double expected, bool isSportif, bool isFumeur, bool isCardiaque, bool isIngeInfo)
     {
-        Assert.Equal(expected, Taux.CalculerTaux(isSportif, isFumeur, isCardiaque));
+        Assert.Equal(expected, Taux.CalculerTaux(isSportif, isFumeur, isCardiaque, isIngeInfo));
     }
 }
