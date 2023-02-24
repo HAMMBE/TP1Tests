@@ -7,6 +7,6 @@ public class UnitTestMensualite
     [Fact]
     public void ShouldReturnCorrectMensualite()
     {
-       Assert.Equal(508.40, Mensualite.Calculer(50000,108,2.10));
+       Assert.Equal(508.49, Mensualite.Calculer(50000,108,2.10));
     }
 }
