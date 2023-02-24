@@ -14,6 +14,7 @@ public class UnitTestMensualite
     [InlineData(0.30, false, false)]
     [InlineData(0.25, true, false)]
     [InlineData(0.45, false, true)]
+    [InlineData(0.40, true, true)]
     public void ShouldReturnCorrectTaux(double expected, bool isSportif, bool isFumeur)
     {
         Assert.Equal(expected, Taux.CalculerTaux(isSportif, isFumeur));
