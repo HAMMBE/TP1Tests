@@ -11,7 +11,7 @@ public class UnitTestMensualite
     }
 
     [Fact]
-    public void ShouldReturnCorrectTauxMensuel()
+    public void ShouldReturnCorrectTaux()
     {
         Assert.Equal(0.30, Taux.CalculerTaux());
     }
