@@ -20,6 +20,6 @@ public class UnitTestMensualite
     [InlineData(0.80, true, true, true, true, true)]
     public void ShouldReturnCorrectTaux(double expected, bool isSportif, bool isFumeur, bool isCardiaque, bool isIngeInfo, bool isPilot)
     {
-        Assert.Equal(expected, Taux.CalculerTauxAssurance(isSportif, isFumeur, isCardiaque, isIngeInfo, isPilot));
+        Assert.Equal(expected, Assurance.CalculerTauxAssurance(isSportif, isFumeur, isCardiaque, isIngeInfo, isPilot));
     }
 }

@@ -1,9 +1,11 @@
+using System.Globalization;
+
 namespace TP2;
 
 public class Calculatrice
 {
-    IData _data;
-    
+    private IData _data;
+
     public Calculatrice(IData data)
     {
         _data = data;
@@ -16,13 +18,37 @@ public class Calculatrice
     }
     
     public void Start()
-    {
+    {   
+        double tauxAnnuelCalculer;
         _data.Afficher("Entrez le montant du prêt");
         Capital montant = new Capital(int.Parse(_data.GetInput()));
         _data.Afficher("Entrez la durée du prêt en année");
-        DureeEnAnnee duree = new DureeEnAnnee(int.Parse(Console.ReadLine()));
-        _data.Afficher("Entrez le taux annuel");
-        double tauxannuel = double.Parse(Console.ReadLine());
-        CalculerMensualite(montant, duree, tauxannuel);
+        DureeEnAnnee duree = new DureeEnAnnee(int.Parse(_data.GetInput()));
+        _data.Afficher("Entrez le taux annuel (Avec un . ex : 2.10)");
+        double tauxannuel = double.Parse(_data.GetInput(), CultureInfo.InvariantCulture);
+        _data.Afficher("Etes-vous sportif ? (O/N)");
+        bool isSportif = _data.GetInput().ToUpper() == "O";
+        _data.Afficher("Etes-vous fumeur ? (O/N)");
+        bool isFumeur = _data.GetInput().ToUpper() == "O";
+        _data.Afficher("Etes-vous atteint de troubles cardiaques ? (O/N)");
+        bool isTroublesCardiaques = _data.GetInput().ToUpper() == "O";
+        _data.Afficher("Etes-vous ingénieur en informatique ? (O/N)");
+        bool isIngenieurInformatique = _data.GetInput().ToUpper() == "O";
+        _data.Afficher("Etes-vous pilote ? (O/N)");
+        bool isPilote = _data.GetInput().ToUpper() == "O";
+        double tauxAssurance = Assurance.CalculerTauxAssurance(isSportif, isFumeur, isTroublesCardiaques, isIngenieurInformatique, isPilote);
+
+        _data.Afficher($"Vous allez payer {tauxAssurance}% d'assurance, et {tauxannuel}% de taux annuel");
+        
+        
+        
+        double mensualite = Mensualite.Calculer(montant, duree, tauxannuel);
+        
+        double assurance = Assurance.CalculerMensualiteAssurance(montant, tauxAssurance);
+        
+        double mensualiteAvecAssurance = mensualite + assurance;
+        
+        _data.Afficher($"La mensualité est de {mensualiteAvecAssurance}€");
+        
     }
 }

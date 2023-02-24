@@ -1,6 +1,6 @@
 namespace TP2;
 
-public class Taux
+public class Assurance
 {
     public const double TauxAnnuelBase = 0.30;
     public static double CalculerTauxAssurance(bool isSportif, bool isFumeur, bool isCardiaque, bool isIngeInfo, bool isPilot)
@@ -29,6 +29,11 @@ public class Taux
         }
         
         return Math.Round(tauxAnnuel, 2);
+    }
+
+    public static double CalculerMensualiteAssurance(Capital montant, double tauxAssurance)
+    {
+         return Math.Round(montant * tauxAssurance / 100 / 12, 2);
     }
 
 }
