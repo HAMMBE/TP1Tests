@@ -23,6 +23,10 @@ public class Taux
         {
             tauxAnnuel -= 0.05;
         }
+        if (isPilot)
+        {
+            tauxAnnuel += 0.15;
+        }
         
         return Math.Round(tauxAnnuel, 2);
     }
