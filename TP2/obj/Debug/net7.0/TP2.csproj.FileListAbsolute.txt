@@ -1,0 +1,15 @@
+C:\Users\benja\RiderProjects\TP1\TP2\bin\Debug\net7.0\TP2.exe
+C:\Users\benja\RiderProjects\TP1\TP2\bin\Debug\net7.0\TP2.deps.json
+C:\Users\benja\RiderProjects\TP1\TP2\bin\Debug\net7.0\TP2.runtimeconfig.json
+C:\Users\benja\RiderProjects\TP1\TP2\bin\Debug\net7.0\TP2.dll
+C:\Users\benja\RiderProjects\TP1\TP2\bin\Debug\net7.0\TP2.pdb
+C:\Users\benja\RiderProjects\TP1\TP2\obj\Debug\net7.0\TP2.csproj.AssemblyReference.cache
+C:\Users\benja\RiderProjects\TP1\TP2\obj\Debug\net7.0\TP2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\benja\RiderProjects\TP1\TP2\obj\Debug\net7.0\TP2.AssemblyInfoInputs.cache
+C:\Users\benja\RiderProjects\TP1\TP2\obj\Debug\net7.0\TP2.AssemblyInfo.cs
+C:\Users\benja\RiderProjects\TP1\TP2\obj\Debug\net7.0\TP2.csproj.CoreCompileInputs.cache
+C:\Users\benja\RiderProjects\TP1\TP2\obj\Debug\net7.0\TP2.dll
+C:\Users\benja\RiderProjects\TP1\TP2\obj\Debug\net7.0\refint\TP2.dll
+C:\Users\benja\RiderProjects\TP1\TP2\obj\Debug\net7.0\TP2.pdb
+C:\Users\benja\RiderProjects\TP1\TP2\obj\Debug\net7.0\TP2.genruntimeconfig.cache
+C:\Users\benja\RiderProjects\TP1\TP2\obj\Debug\net7.0\ref\TP2.dll
