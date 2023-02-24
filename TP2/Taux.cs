@@ -9,6 +9,10 @@ public class Taux
         {
             return TauxAnnuelBase - 0.05;
         }
+        if (isFumeur)
+        {
+            return Math.Round(TauxAnnuelBase + 0.15, 2);
+        }
         return TauxAnnuelBase;
     }
 
