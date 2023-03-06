@@ -22,4 +22,11 @@ public class UnitTestMensualite
     {
         Assert.Equal(expected, Assurance.CalculerTauxAssurance(isSportif, isFumeur, isCardiaque, isIngeInfo, isPilot));
     }
+    
+    [Theory]
+    [InlineData(12.50, 50000, 0.30)]
+    public void shouldReturnCorrectAssurance(double expected, int montant, double tauxAssurance)
+    {
+        Assert.Equal(expected, Assurance.CalculerMensualiteAssurance(montant, tauxAssurance));
+    }
 }
