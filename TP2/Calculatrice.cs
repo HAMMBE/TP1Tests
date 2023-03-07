@@ -43,8 +43,16 @@ public class Calculatrice
         
         double montantTotal = Mensualite.CalculerMontantTotal(mensualiteAvecAssurance, duree);
         
+        double montantTotalMensualite = Mensualite.CalculerMontantTotal(mensualite, duree);
+        
+        double montantTotalAssurance = Mensualite.CalculerMontantTotal(assurance, duree);
+        
         _data.Afficher($"Le montant total est de {montantTotal}€");
         
-        _data.Afficher($"Le montant total d'interet et d'assurance est de {montantTotal - montant}€");
+        _data.Afficher($"Le montant total d'interet et d'assurance est de {Math.Round(montantTotal - montant,2)}€");
+        
+        _data.Afficher($"Le montant total d'interet est de {Math.Round(montantTotalMensualite - montant,2)}€");
+        
+        _data.Afficher($"Le montant total d'assurance est de {montantTotalAssurance}€");
     }
 }
