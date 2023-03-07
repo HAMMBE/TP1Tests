@@ -31,8 +31,8 @@ public class UnitTestMensualite
     }
 
     [Theory]
-    [InlineData(54914.92, 508.49, 9)]
-    public void shouldReturnCorrectTotalMensualite(int expected, double montantMensualite, int duree)
+    [InlineData(54916.92, 508.49, 9)]
+    public void shouldReturnCorrectTotalMensualite(double expected, double montantMensualite, int duree)
     {
         Assert.Equal(expected, Mensualite.CalculerMontantTotal(montantMensualite, duree));
     }

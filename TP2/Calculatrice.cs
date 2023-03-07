@@ -41,5 +41,10 @@ public class Calculatrice
         
         _data.Afficher($"La mensualité total est de {mensualiteAvecAssurance}€, dont {assurance}€ d'assurance");
         
+        double montantTotal = Mensualite.CalculerMontantTotal(mensualiteAvecAssurance, duree);
+        
+        _data.Afficher($"Le montant total est de {montantTotal}€");
+        
+        _data.Afficher($"Le montant total d'interet et d'assurance est de {montantTotal - montant}€");
     }
 }
