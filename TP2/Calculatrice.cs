@@ -17,7 +17,7 @@ public class Calculatrice
         Capital montant = new Capital(int.Parse(_data.GetInput()));
         _data.Afficher("Entrez la durée du prêt en année");
         DureeEnAnnee duree = new DureeEnAnnee(int.Parse(_data.GetInput()));
-        _data.Afficher("Entrez le taux annuel (Avec un . ex : 2.10)");
+        _data.Afficher("Entrez le taux annuel");
         double tauxannuel = double.Parse(_data.GetInput(), CultureInfo.InvariantCulture);
         _data.Afficher("Etes-vous sportif ? (O/N)");
         bool isSportif = _data.GetInput().ToUpper() == "O";
@@ -37,7 +37,7 @@ public class Calculatrice
         
         double assurance = Assurance.CalculerMensualiteAssurance(montant, tauxAssurance);
         
-        double mensualiteAvecAssurance = mensualite + assurance;
+        double mensualiteAvecAssurance = Math.Round(mensualite + assurance, 2);
         
         _data.Afficher($"La mensualité total est de {mensualiteAvecAssurance}€, dont {assurance}€ d'assurance");
         
